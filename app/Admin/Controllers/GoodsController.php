@@ -85,7 +85,7 @@ class GoodsController extends AdminController
         $form->number('goods_price0', __('Goods price0'));
         $form->number('goods_price', __('Goods price'));
         $form->text('goods_desc', __('Goods desc'));
-        $form->image('goods_img', __('public/img'));
+        $form->image('goods_img', __('public/images'));
         $form->number('goods_store', __('Goods store'));
         $form->switch('goods_status', __('Goods status'));
         $form->switch('is_up', __('Is up'));
