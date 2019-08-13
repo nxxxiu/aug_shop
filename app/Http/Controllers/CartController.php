@@ -23,7 +23,6 @@ class CartController extends Controller
 //                $goods_list[]=$goods;
 //                $buy_number=$v['buy_number'];
 //            }
-//            //展示购物车
 //            $data=[
 //                'goods_list'=>$goods_list,
 //                'buy_number'=>$buy_number,
@@ -78,8 +77,6 @@ class CartController extends Controller
                     'goods_name'=>$goodsInfo->goods_name,
                     'goods_price'=>$goodsInfo->goods_price,
                     'uid'=>Auth::id(),
-                    'session_id'=>Session::getId(),
-                    'add_time'=>time()
                 ];
 //            dd($cartInfo);
                 //入库
@@ -94,8 +91,7 @@ class CartController extends Controller
                 }
             }else{  //有数据 累加
                 $updateInfo=[
-                    'buy_number'=>$cartWhereInfo['buy_number']+1,
-                    'add_time'=>time()
+                    'buy_number'=>$cartWhereInfo['buy_number']+1
                 ];
                 $res=Cart::where($cartWhere)->update($updateInfo);
                 if ($res){

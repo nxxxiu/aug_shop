@@ -79,13 +79,11 @@
         <ul>
             @foreach ($data as $k=>$v)
                 <li><a href="/goodsdetail/{{$v['goods_id']}}">{{$v['goods_name']}}</a> - ￥{{$v['goods_price']}}</li>
-                <form action="/cartAdd/{{$v['goods_id']}}" method="get">
-                    <input type="submit" value="加入购物车">
-                </form>
             @endforeach
         </ul>
         <hr>
     </div>
 </div>
+<p align="center">©2015-2019 Powered By 旺仔集团   旺旺</p>
 </body>
 </html>
