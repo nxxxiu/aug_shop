@@ -27,8 +27,7 @@ class OrderController extends Controller
         $orderInfo=[
             'uid'=> Auth::id(),
             'order_sn'=>$order_sn,
-            'order_amount'=> $order_amount,
-            'add_time'=> time()
+            'order_amount'=> $order_amount
         ];
 //        dd($orderInfo);
         //订单详情表
@@ -72,6 +71,6 @@ class OrderController extends Controller
             header('Refresh:2;url=/cartlist');
             echo "还没有订单，快去下单吧！";
         }
-
     }
+
 }

@@ -82,7 +82,6 @@
             @endforeach
         </ul>
         <hr>
-{{--        总价：¥{{$goods_amount}}<br>--}}
         <form action="/orderAdd" method="get">
             <input type="submit" value="提交订单">
         </form>

@@ -8,5 +8,5 @@ class OrderDetail extends Model
 {
     protected $primaryKey = 'detail_id';
     protected $table = 'order_detail';
-    public $timestamps = false;
+    public $timestamps = true;
 }

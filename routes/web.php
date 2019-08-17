@@ -36,5 +36,10 @@ Route::get('/orderlist', 'OrderController@orderlist');//订单列表
 
 //支付
 Route::get('/pay/alipay','PayController@pay');//订单支付
+Route::get('/pay/test','PayController@test');//测试私钥
 Route::post('/notify_url','PayController@notifypay');//支付回调异步
 Route::get('/return_url','PayController@aliReturn');//支付回调同步
+
+//表关系测试
+Route::get('/test/u','TestController@u');
+Route::get('/test/user','TestController@user');

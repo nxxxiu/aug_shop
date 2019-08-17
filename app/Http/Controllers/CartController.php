@@ -6,6 +6,7 @@ use App\Cart;
 use App\Goods;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
 class CartController extends Controller
@@ -14,27 +15,6 @@ class CartController extends Controller
     public function cartlist()
     {
         $cartInfo=Cart::where(['uid'=>Auth::id(),'cart_status'=>1])->get()->toArray();
-//        if ($cartInfo){
-//            //商品总价
-//            $goods_amount=0;
-//            foreach($cartInfo as $k=>$v){
-//                $goods=Goods::where(['goods_id'=>$v['goods_id']])->first()->toArray();
-//                $goods_amount+=$v['goods_price']*$v['buy_number'];
-//                $goods_list[]=$goods;
-//                $buy_number=$v['buy_number'];
-//            }
-//            $data=[
-//                'goods_list'=>$goods_list,
-//                'buy_number'=>$buy_number,
-//                'goods_amount'=>$goods_amount
-//            ];
-////            dd($data);
-//            return view('cart.cartlist',$data);
-//        }else{
-//            header('Refresh:2;url=/goodslist');
-//            die("购物车为空");
-//        }
-//        dd($cartInfo);
         if ($cartInfo){
             return view('cart.cartlist',compact('cartInfo'));
         }else{

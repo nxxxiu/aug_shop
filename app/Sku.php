@@ -8,5 +8,5 @@ class Sku extends Model
 {
     protected $primaryKey = 'sku_id';
     protected $table = 'sku';
-    public $timestamps = false;
+    public $timestamps = true;
 }

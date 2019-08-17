@@ -30,7 +30,7 @@ class GoodsController extends AdminController
         $grid->column('goods_id', __('商品ID'));
         $grid->column('goods_sn', __('商品编号'));
         $grid->column('goods_name', __('商品名称'));
-        $grid->column('goods_price0', __('商品定价'));
+        $grid->column('goods_pricing', __('商品定价'));
         $grid->column('goods_price', __('商品价格'));
         $grid->column('goods_desc', __('商品详情'));
         $grid->column('goods_img', __('商品图片'))->image();
@@ -58,7 +58,7 @@ class GoodsController extends AdminController
         $show->field('goods_id', __('Goods id'));
         $show->field('goods_sn', __('Goods sn'));
         $show->field('goods_name', __('Goods name'));
-        $show->field('goods_price0', __('Goods price0'));
+        $show->field('goods_pricing', __('Goods price0'));
         $show->field('goods_price', __('Goods price'));
         $show->field('goods_desc', __('Goods desc'));
         $show->field('goods_img', __('Goods img'));
@@ -82,7 +82,7 @@ class GoodsController extends AdminController
 
         $form->text('goods_sn', __('Goods sn'));
         $form->text('goods_name', __('Goods name'));
-        $form->number('goods_price0', __('Goods price0'));
+        $form->number('goods_pricing', __('Goods price0'));
         $form->number('goods_price', __('Goods price'));
         $form->text('goods_desc', __('Goods desc'));
         $form->image('goods_img', __('public/images'));

@@ -8,5 +8,11 @@ class Cart extends Model
 {
     protected $primaryKey = 'cart_id';
     protected $table = 'cart';
-    public $timestamps = false;
+    public $timestamps = true;
+
+    public function goodsInfo()
+    {
+        return $this->hasOne('App\Goods','goods_id','goods_id');
+
+    }
 }

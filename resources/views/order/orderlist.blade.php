@@ -76,7 +76,7 @@
             <h2>订单列表</h2>
             @foreach($orderInfo as $k=>$v)
                 <li>
-                    {{ $v['order_id']  }} >>> 订单编号 {{$v['order_sn']}} >>> 总金额 ￥{{$v['order_amount']}} >>> 订单生成时间{{date("Y-m-d H:i:s",$v['add_time'])}}
+                    {{ $v['order_id']  }} >>> 订单编号 {{$v['order_sn']}} >>> 总金额 ￥{{$v['order_amount']}}
                     <a href="/pay/alipay?oid={{$v['order_id']}}"> 去支付 </a>
                     <br>
                 </li>

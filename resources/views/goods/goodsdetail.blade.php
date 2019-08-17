@@ -59,20 +59,20 @@
             background-color: red;
             color: #ffffff;
             border: none;
-            margin-top: 50px;
+            margin-top: 40px;
         }
         .titles {
             font-size: 20px;
         }
         .contents {
-            font-size: 27px;
+            font-size: 26px;
         }
         button {
             width: 80px;
             height: 30px;
             background-color: #ffffff;
             border: grey;
-            margin: 6px;
+            margin: 5px;
             cursor:pointer;
         }
     </style>
@@ -93,14 +93,14 @@
         </div>
     @endif
 </div>
-<img class="img" src="/storage/{{$data['goods_img']}}" alt="暂无图片" width="480" height="490">
+<img class="img" src="/storage/{{$data['goods_img']}}" alt="暂无图片" width="450" height="470">
 <ul class="detail">
     <li><font class="titles">商品名称：</font> <font class="contents">{{$data['goods_name']}}</font></li>
     <li><font class="titles">商品价格：</font> <font class="contents">￥{{$data['goods_price']}}</font></li>
-    <li><font class="titles">商品库存：</font> <font class="contents">{{$data['goods_store']}}件</font></li>
+    <li><font class="titles">商品库存：</font> <font class="contents">{{$data['goods_store']}}</font>件</li>
     <li><font class="titles">商品详情：</font> <font class="contents">{{$data['goods_desc']}}</font></li>
-    <li><font class="titles">口味选择：</font> <button>原味</button> <button>草莓味</button></li>
-    <li><font class="titles">大小选择：</font> <button>80ml</button> <button>12ml</button></li>
+    <li><font class="titles">口味选择：</font> <button>蔓越莓味</button> <button>草莓味</button></li>
+    <li><font class="titles">大小选择：</font> <button>80ml</button> <button>125ml</button></li>
     <form action="/cartAdd/{{$data['goods_id']}}" method="get">
         <input type="submit" value="加入购物车" id="submit">
     </form>

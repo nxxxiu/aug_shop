@@ -28,7 +28,6 @@ class PayController extends Controller
     public function test(){
         echo $this->aliPubKey;echo '<br>';
         echo $this->rsaPrivateKeyFilePath;echo '<br>';
-
     }
     //去支付
     public function pay(Request $request){
@@ -41,7 +40,6 @@ class PayController extends Controller
         $oid=$request->input('oid');
         //验证订单状态 是否已支付 是否是有效订单
         $order_info = Order::where(['order_id'=>$oid,'is_del'=>1,'pay_status'=>2,'uid'=>$uid])->first();
-
         if(!$order_info){
             header('Refresh:2;url=/index');
             die('该订单号不存在,三秒钟后会跳转至主页');
@@ -49,12 +47,10 @@ class PayController extends Controller
         //业务参数
         $bizcont = [
             'subject'           => 'Lening-Order: ' .$oid,
-            'out_trade_no'      => $order_info->order_no,
-            'total_amount'      => $order_info->order_amout ,
+            'out_trade_no'      => $order_info->order_sn,
+            'total_amount'      => $order_info->order_amount,
             'product_code'      => 'QUICK_WAP_WAY',
         ];
-
-
         //公共参数
         $data = [
             'app_id'   => $this->app_id,
@@ -165,7 +161,7 @@ class PayController extends Controller
         $where=[
             'status'=>2
         ];
-        $orderInfo=Order::where(['order_no'=>$json['out_trade_no']])->update($where);
+        $orderInfo=Order::where(['order_sn'=>$json['out_trade_no']])->update($where);
 
         echo 'success';
 
