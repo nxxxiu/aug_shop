@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Cart;
 use App\Goods;
+use App\MerchantModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -36,7 +37,9 @@ class CartController extends Controller
             die("请选择商品");
         }
         $goodsInfo=Goods::where(['goods_id'=>$goods_id])->first();
-//        dd($goodsInfo);
+//        dd($goodsInfo);die;
+        $merchantInfo=MerchantModel::find(5)->merchantInfo->toArray();
+//        dd($merchantInfo);
         if ($goodsInfo){
             //商品状态为2 已经被删除
             if ($goodsInfo->goods_status==2){
@@ -56,6 +59,7 @@ class CartController extends Controller
                     'goods_id'=>$goods_id,
                     'goods_name'=>$goodsInfo->goods_name,
                     'goods_price'=>$goodsInfo->goods_price,
+                    'merchant_id'=>$goodsInfo->merchant_id,
                     'uid'=>Auth::id(),
                 ];
 //            dd($cartInfo);

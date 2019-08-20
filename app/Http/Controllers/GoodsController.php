@@ -2,14 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Goods;
+use App\MerchantModel;
+use Illuminate\Http\Request;
 
 class GoodsController extends Controller
 {
     //商品列表
     public function goodslist()
     {
+        $merchantInfo=MerchantModel::find(1)->merchantInfo->toArray();
+//        dd($merchantInfo);
         $data=Goods::get();
         return view('goods.goodslist',compact('data'));
     }

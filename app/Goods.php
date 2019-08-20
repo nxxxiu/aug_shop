@@ -10,4 +10,8 @@ class Goods extends Model
     protected $table = 'goods';
     public $timestamps = true;
 
+    public function merchantInfo()
+    {
+        return $this->hasOne('App\MerchantModel','merchant_id','merchant_id');
+    }
 }

@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Cart;
-use App\Goods;
 use App\Order;
 use App\OrderDetail;
-use email\Exception;
+use App\MerchantModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
